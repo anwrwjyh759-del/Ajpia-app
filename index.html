@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأجبية</title>
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#ff4444">
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js');
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+  body {
+    background: #000;
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: radial-gradient(circle at 50% 20%, rgba(255, 68, 68, 0.15) 0%, transparent 60%);
+  }
+.container { max-width: 600px; margin: 0 auto; padding: 30px 20px; }
+  h1 {
+    color: #ff4444;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 900;
+    text-shadow: 0 0 20px #ff4444, 0 0 40px #ff4444;
+    margin-bottom: 10px;
+  }
+  p { text-align: center; color: #ccc; font-size: 18px; margin-bottom: 30px; }
+.hour-btn {
+    display: block;
+    background: linear-gradient(135deg, #ff4444, #b71c1c);
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    margin: 12px 0;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255, 68, 68, 0.5);
+    transition: all 0.3s ease;
+    border: 1px solid #ff6666;
+  }
+.hour-btn:hover { transform: scale(1.03); box-shadow: 0 0 40px rgba(255, 68, 68, 0.9); }
+.footer { text-align: center; margin-top: 40px; color: #666; font-size: 14px; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>الأجبية</h1>
+    <p>صلوات السواعي اليومية</p>
+
+    <a href="hour.html?h=boker" class="hour-btn">صلاة باكر</a>
+    <a href="hour.html?h=3rd" class="hour-btn">صلاة الساعة الثالثة</a>
+    <a href="hour.html?h=6th" class="hour-btn">صلاة الساعة السادسة</a>
+    <a href="hour.html?h=9th" class="hour-btn">صلاة الساعة التاسعة</a>
+    <a href="hour.html?h=11th" class="hour-btn">صلاة الغروب</a>
+    <a href="hour.html?h=12th" class="hour-btn">صلاة النوم</a>
+    <a href="hour.html?h=midnight" class="hour-btn">صلاة نصف الليل</a>
+
+    <div class="footer">ربنا يبارك صلاتك</div>
+  </div>
+</body>
+</html>
