@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صلاة</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+  body { background: #000; color: #fff; font-family: 'Cairo', sans-serif; margin: 0; padding: 20px; line-height: 2; }
+.container { max-width: 750px; margin: 0 auto; }
+  h1 { color: #ff4444; text-align: center; font-weight: 900; font-size: 30px; text-shadow: 0 0 15px #ff4444; margin-bottom: 20px; }
+.back-link { display: inline-block; color: #ff4444; text-decoration: none; margin-bottom: 20px; font-weight: 700; font-size: 18px; }
+.content {
+    background: rgba(15, 15, 15, 0.9);
+    border: 1px solid #ff4444;
+    border-radius: 15px;
+    padding: 30px;
+    font-size: 20px;
+    box-shadow: 0 0 25px rgba(255, 68, 68, 0.3);
+  }
+.title { color: #ff4444; font-size: 24px; font-weight: 900; margin: 25px 0 15px 0; text-align: center; }
+.verse { margin: 15px 0; }
+.red { color: #ff4444; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="index.html" class="back-link">← الرجوع للسواعي</a>
+  <h1 id="title">جار التحميل...</h1>
+  <div class="content" id="content"></div>
+</div>
+
+<script>
+const prayers = {
+  boker: {
+    name: "صلاة باكر",
+    text: `
+      <div class="title">مقدمة</div>
+      <div class="verse red">باسم الآب والابن والروح القدس، الإله الواحد آمين.</div>
+      <div class="verse">أشكرك أيها الملك المحب البشر، لأنك أقمتني من نومي...</div>
+
+      <div class="title">المزمور الخمسون</div>
+      <div class="verse">ارحمني يا الله كعظيم رحمتك، ومثل كثرة رأفاتك امح مآثمي...</div>
+
+      <div class="title">الخاتمة</div>
+      <div class="verse">فلنسجد للثالوث القدوس، الآب والابن والروح القدس...</div>
+    `
+  },
+  '3rd': {
+    name: "صلاة الساعة الثالثة",
+    text: `
+      <div class="title">مقدمة</div>
+      <div class="verse red">باسم الآب والابن والروح القدس، الإله الواحد آمين.</div>
+      <div class="verse">أيها الملك السمائي المعزي روح الحق...</div>
+
+      <div class="title">المزمور الخمسون</div>
+      <div class="verse">ارحمني يا الله كعظيم رحمتك...</div>
+
+      <div class="title">الخاتمة</div>
+      <div class="verse">أيها الروح القدس الإله، اجعلنا مستحقين أن نُدعى هيكلاً لك...</div>
+    `
+  },
+  '6th': {
+    name: "صلاة الساعة السادسة",
+    text: `
+      <div class="title">مقدمة</div>
+      <div class="verse red">باسم الآب والابن والروح القدس، الإله الواحد آمين.</div>
+      <div class="verse">أيها الإله الذي في كل وقت وفي كل ساعة...</div>
+
+      <div class="title">المزمور الخمسون</div>
+      <div class="verse">ارحمني يا الله كعظيم رحمتك...</div>
+    `
+  },
+  '9th': {
+    name: "صلاة الساعة التاسعة",
+    text: `
+      <div class="title">مقدمة</div>
+      <div class="verse red">باسم الآب والابن والروح القدس، الإله الواحد آمين.</div>
+      <div class="verse">أيها الإله الذي ذاق الموت بالجسد في وقت الساعة التاسعة...</div>
+    `
+  },
+  '11th': {
+    name: "صلاة الغروب",
+    text: `
+      <div class="title">مقدمة</div>
+      <div class="verse red">باسم الآب والابن والروح القدس، الإله الواحد آمين.</div>
+      <div class="verse">يا نوراً بهياً لمجد الآب الذي لا يموت...</div>
+    `
+  },
+  '12th': {
+    name: "صلاة النوم",
+    text: `
+      <div class="title">مقدمة</div>
+      <div class="verse red">باسم الآب والابن والروح القدس، الإله الواحد آمين.</div>
+      <div class="verse">أيها الملك السمائي المعزي روح الحق...</div>
+    `
+  },
+  midnight: {
+    name: "صلاة نصف الليل",
+    text: `
+      <div class="title">الخدمة الأولى</div>
+      <div class="verse">قوموا يا بني النور لنسبح رب القوات...</div>
+
+      <div class="title">الخدمة الثانية</div>
+      <div class="verse">ها أنا واقف على الباب وأقرع...</div>
+
+      <div class="title">الخدمة الثالثة</div>
+      <div class="verse">التسبحة لك يا الله، يا ساكن في قدسك...</div>
+    `
+  }
+};
+
+const params = new URLSearchParams(window.location.search);
+const h = params.get('h') || 'boker';
+const prayer = prayers[h];
+
+document.getElementById('title').textContent = prayer.name;
+document.getElementById('content').innerHTML = prayer.text;
+</script>
+</body>
+</html>
